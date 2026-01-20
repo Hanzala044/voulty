@@ -1,0 +1,9 @@
+
+{
+  "name": "DivvyUp",
+  "description": "The ultimate budget divider for groups. Split bills, track shared expenses, and manage personal spending with ease.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
