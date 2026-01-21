@@ -33,12 +33,12 @@ export const ChatBot: React.FC<Props> = ({ currency, userEmoji }) => {
     setIsLoading(true);
 
     try {
-      const apiKey = (import.meta as any).env.VITE_GEMINI_API_KEY;
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 
       if (!apiKey || apiKey === 'PLACEHOLDER_API_KEY' || apiKey.length < 20) {
         setMessages(prev => [...prev, {
           role: 'model',
-          text: `⚠️ **API Key Mismatch**: I noticed your key is either missing or too short (\`fwfreg\` is not a valid Gemini key). Please ensure your \`.env.local\` file has the long key starting with \`AIza...\`.`
+          text: `⚠️ **Gemini API Key Missing**: I couldn't find a valid API key. Please ensure your \`.env.local\` (or Netlify environment) has the key starting with \`AIza...\` set as \`VITE_GEMINI_API_KEY\`.`
         }]);
         setIsLoading(false);
         return;

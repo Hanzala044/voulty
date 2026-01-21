@@ -81,7 +81,7 @@ export const ExpenseModal: React.FC<Props> = ({
     if (val.length < 3) return;
     setIsCategorizing(true);
     try {
-      const apiKey = (import.meta as any).env.VITE_GEMINI_API_KEY;
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
       if (!apiKey || apiKey === 'PLACEHOLDER_API_KEY' || apiKey.length < 20) {
         console.warn("Invalid API Key format detected in ExpenseModal");
         setIsCategorizing(false);
